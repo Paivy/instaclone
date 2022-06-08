@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {%load static%} {% block content%}
+
+<div class="row" id="row1">
+  <div class="col-md-2"></div>
+
+  <div class="col-md-6">
+    {%for post in posts%}
+
+    <div class="card home-card" id="home-card" style="width: 38rem">
+      <img
+        class="card-img-top"
+        src="{{post.image.url}}"
+        alt="Card image cap"
+        width="400px"
+        height="400px"
+      />
+      <div class="card-body">
+        <p>
+          <a href="{% url 'like' post.id %}">
+            <button type="button" class="btn btn-outline-danger btn-sm">
+              like
+            </button></a
+          >
+          {{post.likes}}
+          <i class="fa fa-heart-o" aria-hidden="true"></i>
+          <button type="button" class="btn btn-outline-danger btn-sm">
+            Follow
+          </button>
+        </p>
+        <p class="card-text">
+          <span style="color: blue">#{{post.img_name}}</span>
+        </p>
+
+        <p class="card-text">{{post.imge_caption}}</p>
+      </div>
+      <hr />
+      <p>...comments...</p>
+      {%if not post.comments.all%} no comments yet {%else%} {%for comment in post.comments.all%}
+      <strong
+        >{{comment.comment}} <br />
+        posted:{{comment.date_posted|timesince}}</strong
+      >
+      {%endfor%} {%endif%}
+      <hr />
+      
+         <a href="{% url 'comment' post.id%}"> Add a Comment</a>
+
+    </div>
+    <br /><br />
+    {%endfor%}
+  </div>
+
+  <div class="col-md-1"></div>
+
+  <div class="col-md-2">
+    <p style=" font-weight: bold">people you may know</p>
+
+    {%for post in profile%} {% if post.profile_photo%}
+    <div class="knowing">
+      <img
+        src="{{post.profile_photo.url}}"
+        width="50px"
+        height="50px"
+        class="knowing-image"
+      />
+      {{post.name}}
+      <button type="button" class="btn btn-outline-danger btn-sm">
+        Follow
+      </button>
+    </div>
+
+    {%endif%}
+
+    <br />
+    {%endfor%}
+  </div>
+</div>
+
+{%endblock%}
