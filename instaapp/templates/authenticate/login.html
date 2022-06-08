@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="loginform">
+<div class="forml">
+<h1 style="color:white; font-weight:bolder; "><center>
+  LogIn</center></h1>
+
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+    
+  <div class="form-group ">
+    <label for="exampleInputEmail1">Username</label>
+    <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter username">
+ 
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password">
+  </div>
+   <center>
+<input type = "submit" value = "submit" class = "btn btn-secondary">
+</center>
+</form>
+</div>
+
+</div>
+
+
+{%endblock%}
