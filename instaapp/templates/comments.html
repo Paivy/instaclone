@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="loginform">
+<div class="forml">
+<h1 style="color:white; font-weight:bolder; "><center>
+  comment</center></h1>
+
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+    {{form}}
+    
+<input type="submit">
+</center>
+</form>
+</div>
+
+</div>
+
+
+{%endblock%}
