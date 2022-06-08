@@ -1,1 +1,1 @@
-web: gunicorn instaproject.wsgi 
+web: gunicorninstaproject.wsgi
