@@ -45,5 +45,5 @@ https://github.com/Paivy/instaclone.git  ```
 
 ### Support and contact details
 If you have any queries regarding the my site, Please feel free to
-contact on [gmail](mailto://paivyeshirera@gmail.com) and we will be happy
+contact on (mailto://paivyeshirera@gmail.com) and we will be happy
 to look into your query
